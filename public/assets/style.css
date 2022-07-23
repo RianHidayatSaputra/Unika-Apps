@@ -1,0 +1,154 @@
+nav .collapse ul li a {
+    font-family: 'Arimo', sans-serif;
+    font-size: 18px;
+}
+nav {
+    z-index: 10;
+}
+.menu-right {
+    margin-left: 630px;
+}
+img {
+    position: relative;
+}
+.stylist {
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+	top: 245px;
+    left: 790px;
+	z-index: 1;
+    font-size: 60px;
+}
+.home a {
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    top: 410px;
+    left: 950px;
+    z-index: 1;
+    font-size: 25px;
+    border: 4px solid white;
+}
+.home a:hover {
+    color: white;
+}
+h6 {
+    font-family: 'Arimo', sans-serif;
+}
+.Recently {
+    font-family: 'Lato', sans-serif;
+}
+.dolar {
+    font-family: 'Lato', sans-serif;
+    margin-top: -5px;
+}
+.nama-products {
+    font-family: 'Baloo 2', cursive;
+}
+.container .row .col-md-3 .icon {
+    width: 27px;
+    height: 25px;
+}
+.container .row .col-md-7 .m-auto p,a {
+    font-family: 'Lato', sans-serif;
+}
+.peace .col-md-6 {
+    width: 98vh;
+}
+.container .row .button a,button {
+    background-color: #024E82;
+    font-family: 'Lato', sans-serif;
+    font-size: 2vh;
+    border:none;
+}
+.row-bawah .container .row .col-md-3 a {
+    font-family: 'Lato', sans-serif;
+}
+.row-bawah .container .row .col-md-3 form input {
+    border: none;
+}
+.row-bawah .container .footer .col-md-4 p {
+    font-family: 'Lato', sans-serif;
+}
+h1 {
+    z-index: 3;
+    margin-top: 70px;
+    position: absolute;
+}
+.northstar,.contact-us {
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+	top: 250px;
+    left: 100px;
+	z-index: 2;
+}
+.button-1 .col-md-4 a {
+    position: absolute;
+    top: 850px;
+    left: 330px;
+	z-index: 3;
+}
+.button-2 .col-md-4 a {
+    position: absolute;
+    top: 850px;
+    left: 900px;
+	z-index: 3;
+}
+.row .col-md-9 .text-icon p {
+    font-family: 'Baloo 2', cursive;
+}
+.row .col-md-9 .text-icon .people {
+    font-family: 'Arimo', sans-serif;
+}
+label {
+    font-family: 'Lato', sans-serif;
+}
+.single-product-woman .home-shop {
+    margin-top: 65px;
+    font-family: 'Arimo', sans-serif;
+    font-size: 2vh;
+}
+.single-product-woman h6 {
+    font-family: 'Arimo', sans-serif;
+}
+.single-product-woman .diskon {
+    width: 45px;
+    height: 42px;
+    position: absolute;
+    top: 80px;
+    left: 140px;
+}
+.single-product-woman .diskon p {
+    font-family: 'Arimo', sans-serif;
+}
+.single-product-woman .d-flex .img img {
+    margin: -2px;
+}
+.single-product-woman .row .col-md-6 form button {
+    background-color: #024E82;
+    font-family: 'Lato', sans-serif;
+    font-size: 2vh;
+    border:none;   
+}
+.single-product-woman .row .col-md-4 a {
+    font-family: 'Arimo', sans-serif;
+    margin-left: -12px;
+}
+.data {
+    font-family: 'Baloo 2', cursive;
+}
+.data-lato {
+    font-family: 'Lato', sans-serif;
+}
+.totals p {
+    font-family: 'Lato', sans-serif;
+}
+.total {
+    font-family: 'Arimo', sans-serif; 
+}
+.totals form button ,.place-order {
+    background-color: #D6763C;
+}
+.cart .home-cart, .home-checkout {
+    font-family: 'Arimo', sans-serif; 
+    font-size: 2vh;
+}

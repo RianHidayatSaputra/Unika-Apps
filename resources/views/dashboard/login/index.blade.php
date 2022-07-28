@@ -28,9 +28,9 @@
                     {{ session('Logout') }}
                 </div>
                 <h1 class="fw-normal mt-5 pt-4">Please Sign In</h1>
-            @elseif(session('NotRegister'))
+            @elseif(session('NotLogin'))
                 <div class="alert alert-warning w-75" role="alert">
-                    {{ session('NotRegister') }}
+                    {{ session('NotLogin') }}
                 </div>
                 <h1 class="fw-normal mt-5 pt-4">Please Sign In</h1>
             @else

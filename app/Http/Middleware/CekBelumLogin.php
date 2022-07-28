@@ -21,7 +21,7 @@ class CekBelumLogin
 
         // dd(\Session::has('data'));
         if(!\Session::has('data')) {
-            return redirect('login');
+            return redirect('login')->with('NotLogin', 'Please Sign In Now!');
         }
         return $next($request);
         

@@ -47,15 +47,13 @@
                         @enderror
                         <label for="password">Password</label>
                     </div>
-                    <div class="input-group">
-                        <input type="file" class="form-control py-2 @error('photo') is-invalid @enderror"
+                        <input type="file" class="form-control py-2 bg-white @error('photo') is-invalid @enderror"
                             id="photo" name="photo" onchange="previewImage()">
                         @error('photo')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
-                    </div>
                     <img class="img-preview mb-3 img-fluid mt-2 col-md-4 w-100">
 
                     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
@@ -65,21 +63,7 @@
             </main>
         </div>
     </div>
-    <script>
-        previewImage = () => {
-            const image = document.querySelector('#photo')
-            const imgPreview = document.querySelector('.img-preview')
-
-            imgPreview.style.display = 'block'
-
-            const oFReader = new FileReader()
-            oFReader.readAsDataURL(image.files[0])
-
-            oFReader.onload = function(oFREvent) {
-                imgPreview.src = oFREvent.target.result
-            }
-        }
-    </script>
+    <script src="{{asset('assets/script.js')}}"></script>
 </body>
 
 </html>

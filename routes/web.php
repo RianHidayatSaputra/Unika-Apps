@@ -12,6 +12,7 @@ use App\Http\Controllers\TrOrdersDetailController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +24,7 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-// Route::group(['middleware' => ['CekBelumLogin']], function() {
+Route::group(['middleware' => ['CekBelumLogin']], function() {
 
     // Route Frontend
     Route::get('/home', function () {
@@ -56,22 +57,20 @@ use App\Http\Controllers\RegisterController;
 
     // Route Backend
     Route::get('/dashboard', function () {
-        // return 1;
-        // dd(request()->session()->attributes);
-        // if(session('data')) {
-            return view('dashboard.index');
-        // }else {
-        //     return redirect('login');
-        // }
+
+        return view('dashboard.index');
     });
 
+    //Route Logout
+    Route::post('/logout', [LoginController::class, 'logout']);
+
     Route::controller(CustomersController::class)->group(function () {
-            Route::get('/dashboard/customers', 'index');
-            Route::get('/dashboard/customers/add', 'getAddCustomers');
-            Route::post('/dashboard/customers/store', 'postAddCustomers');
-            Route::get('/dashboard/customers/edit/{id}', 'getEditCustomers');
-            Route::post('/dashboard/customers/update', 'postEditCustomers');
-            Route::get('/dashboard/customers/delete/{id}', 'deleteCustomers');
+        Route::get('/dashboard/customers', 'index');
+        Route::get('/dashboard/customers/add', 'getAddCustomers');
+        Route::post('/dashboard/customers/store', 'postAddCustomers');
+        Route::get('/dashboard/customers/edit/{id}', 'getEditCustomers');
+        Route::post('/dashboard/customers/update', 'postEditCustomers');
+        Route::get('/dashboard/customers/delete/{id}', 'deleteCustomers');
     });
     
     Route::controller(AdminsController::class)->group(function () {
@@ -127,16 +126,15 @@ use App\Http\Controllers\RegisterController;
         Route::post('/dashboard/tr-orders/update', 'postEditTrOrders');
         Route::get('/dashboard/tr-orders/delete/{id}', 'deleteTrOrders');
     });
-// });
+});
 
 
-// Route::group(['middleware' => ['CekSudahLogin']], function() {
+Route::group(['middleware' => ['CekSudahLogin']], function() {
 
     // Route Login
     Route::controller(LoginController::class)->group( function() {
         Route::get('/login', 'index');
         Route::post('/login', 'login');
-        Route::post('/logout', 'logout');
     });
     
     // Route Register
@@ -144,4 +142,4 @@ use App\Http\Controllers\RegisterController;
         Route::get('/register', 'index');
         Route::post('/register', 'store');
     });
-// });
+});

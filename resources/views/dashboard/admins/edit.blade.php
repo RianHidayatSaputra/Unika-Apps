@@ -32,8 +32,8 @@
                                 @else
                                     <img class="img-preview img-fluid mb-2 col-sm-5">
                                 @endif
-                                <div class="input-group mb-3 col-sm-10">
-                                    <input type="file" class="form-control py-2 @error('photo') is-invalid @enderror"
+                                <div class="mb-3 col-sm-10">
+                                    <input type="file" class="form-control py-2 bg-white @error('photo') is-invalid @enderror"
                                         id="photo" name="photo" onchange="previewImage()" value="{{ $value->photo }}">
                                     @error('photo')
                                         <div class="invalid-feedback">
@@ -72,19 +72,4 @@
             </div>
         </div>
     </section>
-    <script>
-        previewImage = () => {
-            const image = document.querySelector('#photo')
-            const imgPreview = document.querySelector('.img-preview')
-
-            imgPreview.style.display = 'block'
-
-            const oFReader = new FileReader()
-            oFReader.readAsDataURL(image.files[0])
-
-            oFReader.onload = function(oFREvent) {
-                imgPreview.src = oFREvent.target.result
-            }
-        }
-    </script>
 @endsection

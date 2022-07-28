@@ -2,6 +2,7 @@
 @extends('dashboard.template.main')
 
 @section('content')
+
     <div class="row">
         <div class="col-sm-12">
             <div class="home-t ab">

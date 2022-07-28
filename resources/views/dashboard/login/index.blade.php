@@ -19,8 +19,18 @@
                 </div>
                 <h1 class="fw-normal mt-5 pt-4">Please Sign In</h1>
             @elseif(session('loginError'))
-                <div class="alert alert-danger   w-75" role="alert">
+                <div class="alert alert-danger w-75" role="alert">
                     {{ session('loginError') }}
+                </div>
+                <h1 class="fw-normal mt-5 pt-4">Please Sign In</h1>
+            @elseif(session('Logout'))
+                <div class="alert alert-success w-75" role="alert">
+                    {{ session('Logout') }}
+                </div>
+                <h1 class="fw-normal mt-5 pt-4">Please Sign In</h1>
+            @elseif(session('NotRegister'))
+                <div class="alert alert-warning w-75" role="alert">
+                    {{ session('NotRegister') }}
                 </div>
                 <h1 class="fw-normal mt-5 pt-4">Please Sign In</h1>
             @else
@@ -35,7 +45,7 @@
                     {{-- <input type="hidden" name="_token"> --}}
                     <div class="form-floating">
                         <input type="email" class="form-control @error('email') is-invalid @enderror " name="email"
-                            id="email" placeholder="name@example.com" autofocus required>
+                            id="email" placeholder="name@example.com" value="{{old('email')}}" autofocus required>
                         @error('email')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -57,7 +67,6 @@
                     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
                 </form>
                 @if (session('success'))
-                @elseif(session('loginError'))
                 @else
                     <p class="mt-4 mb-3 text-muted">Dont't have an account? <a href="{{ url('/register') }}"
                             class="text-dark text-muted text-decoration-none fst-italic">Sign Up!</a></p>

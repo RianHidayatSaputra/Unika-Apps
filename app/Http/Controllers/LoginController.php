@@ -27,14 +27,20 @@ class LoginController extends Controller
         $check = DB::table('admins')->where('email', Request::get('email'))->first();
         $password = Request::get('password');
 
-            if( Hash::check($password, $check->password) )
-            {
-                request()->session()->regenerate();
-    
-                return redirect()->intended('dashboard')->with('data', $check);
-            }
+        if (!$check) {
 
             return back()->with('loginError', 'Login Failed!');
+        }else {
+            
+            if( Hash::check($password, $check->password) )
+            {
+                session(['data' => $check]);
+                return redirect()->intended('dashboard');
+            }
+    
+            return back()->with('loginError', 'Login Failed!');
+        }
+
     }
 
     function logout() {
@@ -44,7 +50,7 @@ class LoginController extends Controller
     
         request()->session()->regenerateToken();
     
-        return redirect('/login');
+        return redirect('/login')->with('Logout', 'Logout Succcessfully');
     }
 }
 

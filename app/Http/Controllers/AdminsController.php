@@ -25,7 +25,7 @@ class AdminsController extends Controller
 
         $validate = request()->validate([
             'name' => 'required',
-            'photo' => 'image|file|max:1024',
+            'photo' => 'image|file|max:6000',
             'email' => 'required|email:dns',
             'password' => 'required'
         ]);

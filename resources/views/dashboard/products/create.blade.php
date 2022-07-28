@@ -37,9 +37,9 @@
                                 </div>
                                 <label for="product_photo" class="col-sm-2 control-label">Product Photo</label>
                                 <img class="img-preview img-fluid mb-2 col-sm-5">
-                                <div class="input-group mb-3">
+                                <div class="mb-3 col-sm-10">
                                     <input type="file"
-                                        class="form-control py-2 @error('product_photo') is-invalid @enderror"
+                                        class="form-control py-2 bg-white @error('product_photo') is-invalid @enderror"
                                         id="product_photo" name="product_photo" onchange="previewImage()">
                                     @error('product_photo')
                                         <div class="invalid-feedback">
@@ -90,20 +90,4 @@
             </div>
         </div>
     </section>
-
-    <script>
-        previewImage = () => {
-            const image = document.querySelector('#product_photo')
-            const imgPreview = document.querySelector('.img-preview')
-
-            imgPreview.style.display = 'block'
-
-            const oFReader = new FileReader()
-            oFReader.readAsDataURL(image.files[0])
-
-            oFReader.onload = function(oFREvent) {
-                imgPreview.src = oFREvent.target.result
-            }
-        }
-    </script>
 @endsection

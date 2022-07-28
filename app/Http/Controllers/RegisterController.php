@@ -17,11 +17,10 @@ class RegisterController extends Controller
             'name' => 'required|min:3|max:255',
             'email' => 'required|email:dns|unique:admins',
             'password' => 'required',
-            'photo' => 'required|file|image|max:1024'
+            'photo' => 'required|file|image|max:6000'
         ]);
         
         $name = Request::get('name');
-        $_token = Request::get('_token');
         $email = Request::get('email');
         $password = Request::get('password');
         $photo = Request::file('photo')->store('uploads');
@@ -29,11 +28,10 @@ class RegisterController extends Controller
         DB::table('admins')->insert([
             'name' => $name,
             'email' => $email,
-            'remember_token' => $_token,
             'password' => bcrypt($password),
             'photo' => $photo
         ]);
         
-        return redirect('/login')->with('success', 'Regristration Successfully!');;
+        return redirect('/login')->with('success', 'Sign Up Successfully!');;
     }
 }

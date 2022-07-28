@@ -23,7 +23,6 @@
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" />
 </head>
-
 <body>
     <div class="container-scroller">
         <div class="row p-0 m-0 proBanner" id="proBanner">
@@ -68,7 +67,7 @@
             <div class="navbar-menu-wrapper d-flex align-items-top">
                 <ul class="navbar-nav">
                     <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-                        <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">Admin Dashboard</span>
+                        <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">{{session('data')->name}}</span>
                         </h1>
                         <h3 class="welcome-sub-text">Your performance summary this week </h3>
                     </li>
@@ -213,13 +212,13 @@
                     <li class="nav-item dropdown d-none d-lg-block user-dropdown">
                         <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <img class="img-xs rounded-circle" src="{{ asset('assets/img/abdullah-ah.png') }}"
+                            <img class="img-xs rounded-circle" src="{{ url('storage/'.session('data')->photo) }}"
                                 alt="Profile image"> </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                             <div class="dropdown-header text-center">
-                                <img class="img-md rounded-circle" src="images/faces/face8.jpg" alt="Profile image">
-                                <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
-                                <p class="fw-light text-muted mb-0">allenmoreno@gmail.com</p>
+                                <img class="img-fluid w-50 rounded-circle" src="{{ url('storage/'.session('data')->photo) }}" alt="Profile image">
+                                <p class="mb-1 mt-3 font-weight-semibold">{{ session('data')->name }}</p>
+                                <p class="fw-light text-muted mb-0">{{ session('data')->email }}</p>
                             </div>
                             <a class="dropdown-item"><i
                                     class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My
@@ -549,6 +548,7 @@
     <!-- container-scroller -->
 
     <!-- plugins:js -->
+    <script src="{{ asset('assets/script.js') }}"></script>
     <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->

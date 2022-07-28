@@ -16,7 +16,7 @@ class CekSudahLogin
      */
     public function handle(Request $request, Closure $next)
     {
-        // dd(session('data'));
+        // dd(\Session::has('data'));
         if(\Session::has('data')) {
             return redirect('dashboard');
         }

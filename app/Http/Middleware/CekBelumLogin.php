@@ -17,8 +17,9 @@ class CekBelumLogin
     public function handle(Request $request, Closure $next)
     {
         // dd(!$request->session()->attributes['data']);]
-        return print_r(session('data'));
+        // return print_r(session('data'));
 
+        // dd(\Session::has('data'));
         if(!\Session::has('data')) {
             return redirect('login');
         }

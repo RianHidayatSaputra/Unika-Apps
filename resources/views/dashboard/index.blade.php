@@ -1,9 +1,10 @@
+
 @extends('dashboard.template.main')
 
 @section('content')
     <div class="row">
         <div class="col-sm-12">
-            <div class="home-tab">
+            <div class="home-t ab">
                 <div class="d-sm-flex align-items-center justify-content-between border-bottom">
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">

@@ -233,8 +233,13 @@
                             <a class="dropdown-item"><i
                                     class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i>
                                 FAQ</a>
-                            <a class="dropdown-item"><i
-                                    class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+                            <form action="{{ url('/logout') }}" method="post">
+                                {{ csrf_field() }}
+                                <button class=" text-secondary me-2 border-none dropdown-item"><i
+                                        class="dropdown-item-icon mdi text-primary mdi-power me-2"></i>Sign
+                                    Out</button>
+                            </form>
+
                         </div>
                     </li>
                 </ul>
@@ -437,7 +442,7 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ asset('assets/index.html') }}">
+                        <a class="nav-link" href="{{ url('/dashboard') }}">
                             <i class="mdi mdi-grid-large menu-icon"></i>
                             <span class="menu-title">Dashboard</span>
                         </a>
@@ -525,7 +530,7 @@
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
-                        @yield('content')
+                    @yield('content')
                 </div>
                 <!-- content-wrapper ends -->
                 <!-- partial:partials/_footer.html -->

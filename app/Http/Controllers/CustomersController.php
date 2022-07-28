@@ -9,6 +9,7 @@ use DB;
 
 class CustomersController extends Controller
 {
+
     function index() {
 
         $result['datas'] = DB::table('customers')->get();
